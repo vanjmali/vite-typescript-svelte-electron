@@ -2,12 +2,12 @@ import { defineConfig } from "vite";
 import svelte from '@sveltejs/vite-plugin-svelte';
 import path from "path";
 
-const rendererPath = path.resolve(__dirname, "./src/renderer");
-const outDirRenderer = path.resolve(__dirname, "./app/renderer");
+const rendererPath = path.resolve(__dirname, "src/renderer");
+const outDirRenderer = path.resolve(__dirname, "app/renderer");
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	plugins: [svelte({ configFile: './../../svelte.config.cjs' })],
+	plugins: [svelte({ configFile: './../../svelte.config.js' })],
 	base: "./",
 	root: rendererPath,
 	build: {
@@ -18,7 +18,7 @@ export default defineConfig({
 		alias: [
 			{
 				find: "@renderer",
-				replacement: path.resolve(__dirname, "src/renderer"),
+				replacement: rendererPath,
 			},
 			{
 				find: "@common",
@@ -26,8 +26,13 @@ export default defineConfig({
 			},
 			{
 				find: "@lib",
-				replacement: path.resolve(__dirname, "src/renderer/lib"),
+				replacement: path.resolve(rendererPath, "lib"),
+			},
+			{
+				find: "@assets",
+				replacement: path.resolve(rendererPath, "assets"),
 			},
 		],
+		extensions: ['.js', '.ts', 'json', '.svelte']
 	},
 });

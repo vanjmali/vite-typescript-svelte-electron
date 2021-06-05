@@ -34,11 +34,6 @@
 		"typescript": "^4.3.2",
 		"vite": "^2.0.1"
 	},
-	"_comment": {
-		"specialThanks": {
-			"jctaoo": "https://github.com/jctaoo/vite-electron-esbuild-starter"
-		}
-	},
 	"dependencies": {
 		"fs-extra": "^10.0.0"
 	}

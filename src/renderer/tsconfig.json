@@ -2,8 +2,6 @@
 	"extends": "../../tsconfig.json",
 	"compilerOptions": {
 		"lib": [
-			"DOM",
-			"DOM.Iterable",
 			"ESNext"
 		],
 		"types": [
@@ -16,7 +14,7 @@
 	"include": [
 		"../renderer/**/*",
 		"../common/**/*"
-	],
+, "../vite-env.d.ts"	],
 	"exclude": [
 		"../main/**/*"
 	]

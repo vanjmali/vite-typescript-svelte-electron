@@ -57,15 +57,16 @@ Use [two-package-structure](https://www.electron.build/tutorials/two-package-str
 
 ```
 
-app/                   electron-builder app directory and its build directory                
+app/                   Electron-Builder app directory and its build directory                
 ├─ package.json        Production dependencies, all stored as dependencies (not devDependencies)
-dist/                  electron-builder package directory
+dist/                  Electron-Builder package directory
 scripts/               Support scripts for development/build.
 src/                   
+├─ common/             Common code
 ├─ main/               for main process
-├─ renderer/           for renderer process
+├─ renderer/           For renderer process
 package.json           Dependencies during development, all stored as devDependencies (not dependencies)
-vite.config.ts         vite configurations
-electron-builder.yml   electron-builder configurations
+vite.config.ts         Vite configurations
+electron-builder.yml   Electron-Builder configurations
 
 ```
