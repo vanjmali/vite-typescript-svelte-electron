@@ -1,6 +1,6 @@
-appId: com.jctaoo.electron_starter
-productName: electron starter
-copyright: Copyright © 2021 jctaoo
+appId: com.vanjmali.svelte-vite-electron
+productName: svelte-vite-electron
+copyright: Copyright © 2021 vanjmali
 directories:
   output: dist
   buildResources: build

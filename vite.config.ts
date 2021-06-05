@@ -1,29 +1,33 @@
 import { defineConfig } from "vite";
-import reactRefresh from "@vitejs/plugin-react-refresh";
-import { join, resolve } from "path";
+import svelte from '@sveltejs/vite-plugin-svelte';
+import path from "path";
 
-const rendererPath = resolve(__dirname, "./src/renderer");
-const outDirRenderer = resolve(__dirname, "./app/renderer")
+const rendererPath = path.resolve(__dirname, "./src/renderer");
+const outDirRenderer = path.resolve(__dirname, "./app/renderer");
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [reactRefresh()],
-  base: "./",
-  root: rendererPath,
-  build: {
-    outDir: outDirRenderer,
-    emptyOutDir: true,
-  },
-  resolve: {
-    alias: [
-      {
-        find: "@renderer",
-        replacement: resolve(__dirname, "src/renderer"),
-      },
-      {
-        find: "@common",
-        replacement: resolve(__dirname, "src/common"),
-      },
-    ],
-  },
+	plugins: [svelte({ configFile: './../../svelte.config.cjs' })],
+	base: "./",
+	root: rendererPath,
+	build: {
+		outDir: outDirRenderer,
+		emptyOutDir: true,
+	},
+	resolve: {
+		alias: [
+			{
+				find: "@renderer",
+				replacement: path.resolve(__dirname, "src/renderer"),
+			},
+			{
+				find: "@common",
+				replacement: path.resolve(__dirname, "src/common"),
+			},
+			{
+				find: "@lib",
+				replacement: path.resolve(__dirname, "src/renderer/lib"),
+			},
+		],
+	},
 });
