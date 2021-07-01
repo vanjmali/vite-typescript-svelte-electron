@@ -5,7 +5,7 @@
 	"scripts": {
 		"dev": "cross-env NODE_ENV=development elecrun --vite --preload preload.ts",
 		"preview": "npm build && cross-env NODE_ENV=production electron ./app/",
-		"build": "elecrun build && vite build",
+		"build": "elecrun build --preload preload.ts && vite build",
 		"clean": "elecrun clean",
 		"pack": "npm run build && npm run rebuild && cross-env CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder -c ./electron-builder.yml --win --linux",
 		"pack:all": "npm run build && npm run rebuild && cross-env CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder -c ./electron-builder.yml --win --linux --mac",
